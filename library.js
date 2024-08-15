@@ -1,3 +1,5 @@
+const yourLibrary = []
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -8,6 +10,10 @@ function Book(title, author, pages, read){
         return  this.read ? this.title + " by " + this.author + ", " + this.pages + " pages, already read" : 
         this.title + " by " + this.author + ", " + this.pages + " pages, not read yet";
     }
+}
+
+function addBookToLibrary(book) {
+    yourLibrary.push(book);
 }
 
 let book1 = new Book("Diary of a Wimpy Kid", "Jeff Kinney", 217, true);
