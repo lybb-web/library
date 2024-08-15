@@ -16,5 +16,32 @@ function addBookToLibrary(book) {
     yourLibrary.push(book);
 }
 
+function displayLibrary() {
+    for (i = 0; i < yourLibrary.length; i++)
+    {
+        let container = document.querySelector("#book-list");
+        let bookDiv = document.createElement("div");
+        bookDiv.textContent = yourLibrary[i].title;
+        console.log(bookDiv);
+        container.appendChild(bookDiv);
+
+        let authorDiv = document.createElement("div");
+        authorDiv.textContent = yourLibrary[i].author;
+        container.appendChild(authorDiv);
+
+        let pageDiv = document.createElement("div");
+        pageDiv.textContent = yourLibrary[i].pages;
+        container.appendChild(pageDiv);
+
+        let readDiv = document.createElement("div");
+        readDiv.textContent = yourLibrary[i].read ? "Has Read Already" : "Unfinished";
+        container.appendChild(readDiv);
+
+    }
+}
+
 let book1 = new Book("Diary of a Wimpy Kid", "Jeff Kinney", 217, true);
 console.log(book1.info());
+addBookToLibrary(book1);
+console.log(yourLibrary);
+displayLibrary();

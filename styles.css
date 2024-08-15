@@ -1,0 +1,10 @@
+#title {
+    font-size: 64px; 
+    text-align: center;
+    font-weight: 600;
+}
+
+#book-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
