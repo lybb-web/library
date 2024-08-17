@@ -60,8 +60,13 @@ displayLibrary();
 
 let dialog = document.querySelector("#new-book-modal");
 let addButton = document.querySelector("button");
+let closeButton = document.querySelector("#close-button");
 
 addButton.addEventListener("click", () => {
     console.log(dialog);
     dialog.showModal();
 });
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+})
