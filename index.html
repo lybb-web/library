@@ -18,9 +18,30 @@
         </div>
         <div id="add-book-button"><button onclick="displayForm()">Add Book</button></div>
         <dialog id="new-book-modal">    
-            <p>Add a book please.</p>
-            <button id="close-button">Cancel</button>
-            <button>Add Book</button>
+            <form >
+                <p>Add a book please.</p>
+                <label for="" >
+                    Title
+                    <input id="title-input" type="text" required />
+                </label>
+                <label for="">
+                    Author
+                    <input type="text"  />
+                </label>
+                <label for="">
+                    Page Count
+                    <input type="number" />
+                </label>
+                <label for="">
+                    Status
+                    <input type="radio" />
+                    <label for="">Completed</label>
+                    <input type="radio">
+                    <label for="">Incomplete</label>
+                </label>
+                <button id="close-button">Cancel</button>
+                <button id="submit-button">Add Book</button>
+            </form>
         </dialog>
         <script src="library.js"></script>
     </body>

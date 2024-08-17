@@ -61,6 +61,7 @@ displayLibrary();
 let dialog = document.querySelector("#new-book-modal");
 let addButton = document.querySelector("button");
 let closeButton = document.querySelector("#close-button");
+let submitButton = document.querySelector("#submit-button");
 
 addButton.addEventListener("click", () => {
     console.log(dialog);
@@ -69,4 +70,9 @@ addButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", () => {
     dialog.close();
+});
+
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(document.querySelector("#title-input").value);
 })
