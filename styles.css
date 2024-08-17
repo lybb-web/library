@@ -8,3 +8,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+#add-book-button, button {
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+}

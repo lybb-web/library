@@ -40,8 +40,28 @@ function displayLibrary() {
     }
 }
 
+function displayForm() {
+    let container = document.querySelector("body");
+    let modal = document.createElement("dialog");
+    let para = document.createElement("p");
+    para.textContent = "Love yourself!";
+    modal.appendChild(para);
+    container.appendChild(modal);
+}
+
+
+
 let book1 = new Book("Diary of a Wimpy Kid", "Jeff Kinney", 217, true);
 console.log(book1.info());
 addBookToLibrary(book1);
 console.log(yourLibrary);
 displayLibrary();
+
+
+let dialog = document.querySelector("#new-book-modal");
+let addButton = document.querySelector("button");
+
+addButton.addEventListener("click", () => {
+    console.log(dialog);
+    dialog.showModal();
+});
