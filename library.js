@@ -17,27 +17,45 @@ function addBookToLibrary(book) {
 }
 
 function displayLibrary() {
-    for (i = 0; i < yourLibrary.length; i++)
-    {
-        let container = document.querySelector("#book-list");
-        let bookDiv = document.createElement("div");
-        bookDiv.textContent = yourLibrary[i].title;
-        console.log(bookDiv);
-        container.appendChild(bookDiv);
+    // for (i = 0; i < yourLibrary.length; i++)
+    // {
+    //     let container = document.querySelector("#book-list");
+    //     let bookDiv = document.createElement("div");
+    //     console.log(yourLibrary[i].title);
+    //     bookDiv.textContent = yourLibrary[i].title;
+    //     console.log(bookDiv);
+    //     container.appendChild(bookDiv);
 
-        let authorDiv = document.createElement("div");
-        authorDiv.textContent = yourLibrary[i].author;
-        container.appendChild(authorDiv);
+    //     let authorDiv = document.createElement("div");
+    //     authorDiv.textContent = yourLibrary[i].author;
+    //     container.appendChild(authorDiv);
 
-        let pageDiv = document.createElement("div");
-        pageDiv.textContent = yourLibrary[i].pages;
-        container.appendChild(pageDiv);
+    //     let pageDiv = document.createElement("div");
+    //     pageDiv.textContent = yourLibrary[i].pages;
+    //     container.appendChild(pageDiv);
 
-        let readDiv = document.createElement("div");
-        readDiv.textContent = yourLibrary[i].read ? "Has Read Already" : "Unfinished";
-        container.appendChild(readDiv);
+    //     let readDiv = document.createElement("div");
+    //     readDiv.textContent = yourLibrary[i].read ? "Has Read Already" : "Unfinished";
+    //     container.appendChild(readDiv);
 
-    }
+    // }
+
+    let container = document.querySelector("#book-list");
+    let bookDiv = document.createElement("div");
+    bookDiv.textContent = yourLibrary[yourLibrary.length-1].title;
+    container.appendChild(bookDiv);
+
+    let authorDiv = document.createElement("div");
+    authorDiv.textContent = yourLibrary[yourLibrary.length-1].author;
+    container.appendChild(authorDiv);
+
+    let pageDiv = document.createElement("div");
+    pageDiv.textContent = yourLibrary[yourLibrary.length-1].pages;
+    container.appendChild(pageDiv);
+
+    let readDiv = document.createElement("div");
+    readDiv.textContent = yourLibrary[yourLibrary.length-1].read ? "Has Read Already": "Unfinished";
+    container.appendChild(readDiv);
 }
 
 function displayForm() {
@@ -74,5 +92,19 @@ closeButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(document.querySelector("#title-input").value);
+    let title = document.querySelector("#title-input").value;
+    let author = document.querySelector("#author-input").value;
+    let page = document.querySelector("#page-input").value;
+    let status = false;
+    let statuses = document.getElementsByClassName("status-input");
+    for (i = 0; i < statuses.length; i++)
+    {
+        if (statuses[i].checked)
+        {
+            status = statuses[i].value;
+        }
+    }
+    let newBook = new Book(title, author, page, status);
+    addBookToLibrary(newBook);
+    displayLibrary();
 })
