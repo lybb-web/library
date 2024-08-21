@@ -101,7 +101,8 @@ submitButton.addEventListener("click", (e) => {
     {
         if (statuses[i].checked)
         {
-            status = statuses[i].value;
+            status = true ? statuses[i].value == "true" : false;
+            
         }
     }
     let newBook = new Book(title, author, page, status);
