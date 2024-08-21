@@ -106,6 +106,8 @@ submitButton.addEventListener("click", (e) => {
         }
     }
     let newBook = new Book(title, author, page, status);
+    document.getElementById("new-book-form").reset();
     addBookToLibrary(newBook);
     displayLibrary();
+    dialog.close();
 })
