@@ -16,47 +16,57 @@ function addBookToLibrary(book) {
     yourLibrary.push(book);
 }
 
-function displayLibrary() {
-    // for (i = 0; i < yourLibrary.length; i++)
-    // {
-    //     let container = document.querySelector("#book-list");
-    //     let bookDiv = document.createElement("div");
-    //     console.log(yourLibrary[i].title);
-    //     bookDiv.textContent = yourLibrary[i].title;
-    //     console.log(bookDiv);
-    //     container.appendChild(bookDiv);
+// function displayLibrary() {
+//     // for (i = 0; i < yourLibrary.length; i++)
+//     // {
+//     //     let container = document.querySelector("#book-list");
+//     //     let bookDiv = document.createElement("div");
+//     //     console.log(yourLibrary[i].title);
+//     //     bookDiv.textContent = yourLibrary[i].title;
+//     //     console.log(bookDiv);
+//     //     container.appendChild(bookDiv);
 
-    //     let authorDiv = document.createElement("div");
-    //     authorDiv.textContent = yourLibrary[i].author;
-    //     container.appendChild(authorDiv);
+//     //     let authorDiv = document.createElement("div");
+//     //     authorDiv.textContent = yourLibrary[i].author;
+//     //     container.appendChild(authorDiv);
 
-    //     let pageDiv = document.createElement("div");
-    //     pageDiv.textContent = yourLibrary[i].pages;
-    //     container.appendChild(pageDiv);
+//     //     let pageDiv = document.createElement("div");
+//     //     pageDiv.textContent = yourLibrary[i].pages;
+//     //     container.appendChild(pageDiv);
 
-    //     let readDiv = document.createElement("div");
-    //     readDiv.textContent = yourLibrary[i].read ? "Has Read Already" : "Unfinished";
-    //     container.appendChild(readDiv);
+//     //     let readDiv = document.createElement("div");
+//     //     readDiv.textContent = yourLibrary[i].read ? "Has Read Already" : "Unfinished";
+//     //     container.appendChild(readDiv);
 
-    // }
+//     // }
 
-    let container = document.querySelector("#book-list");
-    let bookDiv = document.createElement("div");
-    bookDiv.textContent = yourLibrary[yourLibrary.length-1].title;
-    container.appendChild(bookDiv);
+//     let container = document.querySelector("#book-list");
+//     let bookDiv = document.createElement("div");
+//     bookDiv.textContent = yourLibrary[yourLibrary.length-1].title;
+//     container.appendChild(bookDiv);
 
-    let authorDiv = document.createElement("div");
-    authorDiv.textContent = yourLibrary[yourLibrary.length-1].author;
-    container.appendChild(authorDiv);
+//     let authorDiv = document.createElement("div");
+//     authorDiv.textContent = yourLibrary[yourLibrary.length-1].author;
+//     container.appendChild(authorDiv);
 
-    let pageDiv = document.createElement("div");
-    pageDiv.textContent = yourLibrary[yourLibrary.length-1].pages;
-    container.appendChild(pageDiv);
+//     let pageDiv = document.createElement("div");
+//     pageDiv.textContent = yourLibrary[yourLibrary.length-1].pages;
+//     container.appendChild(pageDiv);
 
-    let readDiv = document.createElement("div");
-    readDiv.textContent = yourLibrary[yourLibrary.length-1].read ? "Has Read Already": "Unfinished";
-    container.appendChild(readDiv);
-}
+//     let readDiv = document.createElement("div");
+//     readDiv.textContent = yourLibrary[yourLibrary.length-1].read ? "Has Read Already": "Unfinished";
+//     container.appendChild(readDiv);
+
+//     let deleteButton = document.createElement("button");
+//     deleteButton.classList.add("delete-button");
+//     deleteButton.classList.add(yourLibrary.length);
+//     deleteButton.textContent = "Delete";
+//     deleteButton.setAttribute("onclick", "removeBook(getBookIndex())");
+//     container.appendChild(deleteButton);
+
+// }
+
+
 
 function displayForm() {
     let container = document.querySelector("body");
@@ -65,6 +75,22 @@ function displayForm() {
     para.textContent = "Love yourself!";
     modal.appendChild(para);
     container.appendChild(modal);
+}
+
+function removeBook(num) {
+    console.log("you should kill yourself, NOW!");
+    console.log(num);
+}
+
+function getBookIndex(book) {
+    for (i = 0; i < yourLibrary.length; i++)
+    {
+        if (yourLibrary[i] == book)
+        {
+            return i;
+        }
+    }
+    return -1;
 }
 
 
@@ -77,7 +103,7 @@ displayLibrary();
 
 
 let dialog = document.querySelector("#new-book-modal");
-let addButton = document.querySelector("button");
+let addButton = document.getElementById("add-book-button");
 let closeButton = document.querySelector("#close-button");
 let submitButton = document.querySelector("#submit-button");
 

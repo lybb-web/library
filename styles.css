@@ -4,9 +4,9 @@
     font-weight: 600;
 }
 
-#book-list {
+.table-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 #add-book-button, button {

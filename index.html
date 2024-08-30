@@ -10,13 +10,21 @@
     </head>
     <body>
         <div id="title">Welcome to Your Library!</div>
-        <div id="book-list">
-            <div id="title-header">Title</div>
-            <div id="author-header">Author</div>
-            <div id="page-header">Pages</div>
-            <div id="read-header">Read</div>
+        <div id="library-table">
+            <div id="table-header" class="table-row">
+                <div id="title-header">Title</div>
+                <div id="author-header">Author</div>
+                <div id="page-header">Pages</div>
+                <div id="read-header">Read</div>
+            </div>
+            <div class="table-row">
+                <div>Diary of a Wimpy Kid</div>
+                <div>Jeff Kinney</div>
+                <div>217</div>
+                <div>True</div>
+            </div>
         </div>
-        <div id="add-book-button"><button onclick="displayForm()">Add Book</button></div>
+        <div id="add-book-button"><button >Add Book</button></div>
         <dialog id="new-book-modal">    
             <form id="new-book-form">
                 <p>Add a book please.</p>
