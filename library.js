@@ -39,6 +39,7 @@ function populateRow(row, book) {
     deleteButton.textContent = "Delete";
 
     deleteButton.addEventListener("click", e => {
+        console.log(book.title);
         removeBook(book.title);
     })
 
@@ -112,9 +113,9 @@ function displayForm() {
 function removeBook(num) {
     console.log("you should kill yourself, NOW!");
     let i = getBookIndex(num);
-    console.log(i)
     let table = document.querySelector("#library-table");
-    table.removeChild(table.children[i]);
+    table.removeChild(table.children[i+1]);
+    yourLibrary.splice(i, 1);
 
 }
 
@@ -128,15 +129,6 @@ function getBookIndex(book) {
     }
     return -1;
 }
-
-
-
-let book1 = new Book("Diary of a Wimpy Kid", "Jeff Kinney", 217, true);
-console.log(book1.info());
-addBookToLibrary(book1);
-console.log(yourLibrary);
-// displayLibrary();
-
 
 let dialog = document.querySelector("#new-book-modal");
 let addButton = document.getElementById("add-book-button");
