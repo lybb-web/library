@@ -111,9 +111,11 @@ function displayForm() {
 
 function removeBook(num) {
     console.log("you should kill yourself, NOW!");
-    console.log(num);
     let i = getBookIndex(num);
-    console.log(i);
+    console.log(i)
+    let table = document.querySelector("#library-table");
+    table.removeChild(table.children[i]);
+
 }
 
 function getBookIndex(book) {
