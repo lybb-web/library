@@ -39,43 +39,28 @@ function populateRow(row, book) {
     deleteButton.textContent = "Delete";
 
     deleteButton.addEventListener("click", e => {
-        console.log(book.title);
         removeBook(book.title);
     })
 
     row.appendChild(deleteButton);
+
+    let statusButton = document.createElement("button");
+    statusButton.classList.add("status-button");
+    statusButton.textContent = "Change Status";
+
+    statusButton.addEventListener("click", e => {
+        book.read = !book.read;
+        readDiv.textContent = book.read ? "Has Read Already" : "Unfinished";
+    })
+
+    row.appendChild(statusButton);
 
     return row;
 }
 
 function displayLibrary() {
 
-    // let container = document.querySelector("#book-list");
-    // let bookDiv = document.createElement("div");
-    // bookDiv.textContent = yourLibrary[yourLibrary.length-1].title;
-    // container.appendChild(bookDiv);
-
-    // let authorDiv = document.createElement("div");
-    // authorDiv.textContent = yourLibrary[yourLibrary.length-1].author;
-    // container.appendChild(authorDiv);
-
-    // let pageDiv = document.createElement("div");
-    // pageDiv.textContent = yourLibrary[yourLibrary.length-1].pages;
-    // container.appendChild(pageDiv);
-
-    // let readDiv = document.createElement("div");
-    // readDiv.textContent = yourLibrary[yourLibrary.length-1].read ? "Has Read Already": "Unfinished";
-    // container.appendChild(readDiv);
-
-    // let deleteButton = document.createElement("button");
-    // deleteButton.classList.add("delete-button");
-    // deleteButton.classList.add(yourLibrary.length);
-    // deleteButton.textContent = "Delete";
-    // deleteButton.setAttribute("onclick", "removeBook(getBookIndex())");
-    // container.appendChild(deleteButton);
-
     let container = document.querySelector("#library-table");
-
     let headerRow = document.querySelector("#table-header");
 
 
